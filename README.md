@@ -3,11 +3,11 @@ Implementation of a simple chat app using Python and WebSockets for UTP course I
 
 # Need to install via pip
 
-* ## pymongo
-```shell
+* pymongo
+```sh
 sudo python -m pip install pymongo
 ```
-* ## bcrypt
-```shell
+* bcrypt
+```sh
 sudo python -m pip install bcrypt
 ```
