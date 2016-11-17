@@ -1,5 +1,5 @@
-import logging
 import bcrypt
+
 
 class User:
     def __init__(self, user):
@@ -12,5 +12,5 @@ class User:
 
     def __get_pass(self, password):
         salt = bcrypt.gensalt()
-        hashed_pass = bcrypt.hashpw(password, salt)
+        hashed_pass = bcrypt.hashpw(password.encode('utf-8'), salt)
         return hashed_pass

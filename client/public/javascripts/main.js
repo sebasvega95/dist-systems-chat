@@ -1,4 +1,4 @@
-socket = io.connect('http://10.253.44.192:8000', () => {
+socket = io.connect('http://localhost:8000', () => {
   console.log('socket connected');
 });
 
@@ -6,7 +6,7 @@ socket.on('signup', (data) => console.log(data));
 
 function signup() {
   console.log('CLICK');
-  socket.emit('signup', `{
+  let load = {
     'user': {
       'first_name': 'Sebastian',
       'last_name': 'Verga',
@@ -14,8 +14,7 @@ function signup() {
       'password': 'pepito123',
       'age': '21',
       'gender': 'M'
-      }
-    }`
-  );
-
+    }
+  }
+  socket.emit('signup', JSON.stringify(load));
 }
