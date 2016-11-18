@@ -1,9 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
 router.get('/', (req, res) => {
-  res.render('index', { title: 'Chat' });
+  res.render('signup', { title: 'Sign Up and start chatting' });
 });
 
+router.get('/signup', (req, res) => {
+  res.render('signup', { title: 'Sign Up and start chatting' });
+});
+
+router.get('/login', (req, res) => {
+  res.render('login', { title: 'Login'});
+});
 module.exports = router;
