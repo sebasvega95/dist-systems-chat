@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1 class="center"><%= title %></h1>
+        <div class="center row">
+          <form class="col s12" name="signup_form" id="signup_form">
+            <div class="row">
+              <div class="input-field col s6 m6 l6">
+                <input id="first_name" type="text" class="validate" pattern="[a-zA-Záéíóúñ]+" required>
+                <label for="first_name" data-error="invalid first name">First Name</label>
+              </div>
+              <div class="input-field col s6 m6 l6">
+                <input id="last_name" type="text" class="validate" pattern="[a-zA-Záéíóúñ]+" required>
+                <label for="last_name" data-error="invalid last name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="username" type="text" class="validate" pattern="[a-zA-Z][a-zA-Z0-9_-]*" required>
+                <label for="username" data-error="please enter a valid username">Username</label>"
+              </div>
+              <div class="input-field col s6">
+                <input id="password" type="password" class="validate" pattern="[a-zA-Z0-9_-]+" required>
+                <label for="password" data-error="please enter a valid password, no special characters">Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="age" type="number" min="1" max="150" class="validate" required>
+                <label for="age" data-error="please enter a valid age">Age</label>
+              </div>
+              <p class="center">
+                Genero:
+                <input name="gender" type="radio" id="male" checked/>
+                <label for="male">M</label>
+                <input name="gender" type="radio" id="female"/>
+                <label for="female">F</label>
+              </p>
+            </div>
+            <a class="waves-effect waves-light btn" onclick="signup()" type="submit">Sign Up</a>
+          </form>
+        </div>
+
+      </div>
+    </main>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script type="text/javascript" src="javascripts/sign_up_utils.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+  </body>
+</html>
