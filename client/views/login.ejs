@@ -11,12 +11,27 @@
     <main>
       <div class="container">
         <h1 class="center"><%= title %></h1>
-
+        <div class="center row">
+          <form class="col s12" name="login_form" id="login_form">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="username" type="text" class="validate" pattern="[a-zA-Z][a-zA-Z0-9_-]*" required>
+                <label for="username" data-error="please enter a valid username">Username</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="password" type="password" class="validate" pattern="[a-zA-Z0-9_-]+" required>
+                <label for="password" data-error="please enter a valid password, no special characters">Password</label>
+              </div>
+            </div>
+            <a class="waves-effect waves-light btn" onclick="login()" type="submit">Log in</a>
+          </form>
+        </div>
       </div>
     </main>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script type="text/javascript" src="javascripts/main.js"></script>
+    <script type="text/javascript" src="javascripts/login_utils.js"></script>
   </body>
 </html>
